@@ -11,6 +11,7 @@ class Dashboard extends CI_Controller {
     }
     
    public function index() {
+	  
         $result = '';
 		$success ='';
 		$error ='';

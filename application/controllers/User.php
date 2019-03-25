@@ -28,15 +28,15 @@ class User extends CI_Controller {
         }
     }
   public function index() {  
-       
+       $data='';
         if (($this->session->userdata('uWebStatus') == true)) 
 			 redirect('Dashboard/index');
         
         if ($this->form_validation->run('login') == FALSE) {
-      
+  
             $this->parser->parse('admin/login', $data);
         } else {
-         
+        
             $this->load->model('AutModel');        
            // var_dump($this->input->post()); ezit;
             if ($this->AutModel->checkUserCredentials($this->input->post())) {
@@ -64,9 +64,7 @@ class User extends CI_Controller {
         } 
     }
    
-    public function checkUserEmail() {
-
-    }
+   
   protected function userAccessCheckUp() {
         if (($this->session->userdata('uWebStatus') == NULL)) {
             redirect('User/check');

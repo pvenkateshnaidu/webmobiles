@@ -5,7 +5,14 @@ $config = array(
         array(
             'field' => 'email',
             'label' => 'Email',
-            'rules' => 'trim|required|is_unique[users.email]'
+            'rules' => 'trim|required|is_unique[members.email]'
+        )
+    ),
+	   'login' => array(
+        array(
+            'field' => 'email',
+            'label' => 'Email',
+            'rules' => 'trim|required'
         )
     ),
     'addCollege' => array(
